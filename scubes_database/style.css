@@ -90,7 +90,7 @@ header a{
     align-items: center;
     min-height: 300px;
     background-image: url(https://minerva.ufsc.br/~lacerda/s-cubes/s-cubes_db_logo.png);
-    background-color: var(--banner-blue)
+    background-color: var(--banner-blue);
     background-position: center;
     background-repeat: no-repeat;
     /* color: var(--secundary-color); */
