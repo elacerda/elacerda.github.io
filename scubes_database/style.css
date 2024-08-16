@@ -131,6 +131,10 @@ tr:nth-child(even) {
     background-color: var(--accent-gray);
 }
 
+.line {
+    cursor: pointer;
+}
+
 .line:hover{
     background-color: var(--accent-color);    
 }

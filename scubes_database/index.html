@@ -29,7 +29,7 @@
                 <table>
                     <thead>
                         <th>Image</th>
-                        <th>Sname</th>
+                        <th>SNAME</th>
                         <th>Name</th>
                         <th>Field</th>
                         <th>RA(degrees)</th>
@@ -5152,11 +5152,13 @@
         </footer>
     </body>
     <script>
-        jQuery(document).ready(function($) {
-            $(".line").click(function() {
-                window.location = $(this).data("href");
-            });
-        });
-    </script>            
+        let sel = document.querySelectorAll('.line')
+
+        sel.forEach((e) => {
+            e.addEventListener('click', ()=>{
+                window.location.href = http://elacerda.github.io/scubes_database/${e.dataset.href}
+            })
+        })
+    </script>         
     </html>
     
