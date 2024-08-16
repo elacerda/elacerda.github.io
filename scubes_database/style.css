@@ -33,6 +33,7 @@ ol, ul {
 
     --main-color:#2880B9;
     --dark-blue: #164768;
+    --banner-blue: #000226;
     --secundary-color: #fff;
     --accent-color: #daf0ff;
     --accent-gray:#f3f3f3;
@@ -91,7 +92,7 @@ header a{
     background-image: url(https://minerva.ufsc.br/~lacerda/s-cubes/s-cubes_db_logo.png);
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--secundary-color);
+    color: var(--banner-blue);
     font-size: 3rem;
 }
 
