@@ -93,8 +93,10 @@ header a{
     background-color: var(--banner-blue);
     background-position: center;
     background-repeat: no-repeat;
-    /* color: var(--secundary-color); */
+    /* 
+    color: var(--secundary-color); 
     font-size: 3rem;
+    */
 }
 
 table{
