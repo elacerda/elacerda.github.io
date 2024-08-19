@@ -2,6 +2,9 @@ from os.path import join
 from copy import deepcopy as copy
 from astropy.io import fits, ascii
 
+CUBESPATH = '/PATH/TO/CUBES'
+MASTERLIST = '/PATH/TO/MASTERLIST'
+
 def create_index(ml):
     index_ini = """<!DOCTYPE html>
     <html lang="en">
@@ -112,7 +115,7 @@ def create_index(ml):
     gal_page_template = """
 
         <main>
-            <div style="background-image:url(https://minerva.ufsc.br/~lacerda/s-cubes/img/{SNAME}_imgs_3Dflux.png); display: flex; justify-content: center; align-items: center; height: 300px; background-position: center; background-repeat: no-repeat;"></div>
+            <div style="background-image:url(https://minerva.ufsc.br/~lacerda/s-cubes/img/{SNAME}_imgs_3Dflux.png); display: flex; justify-content: center; align-items: center; max-height: 300px; background-position: center; background-repeat: no-repeat; background-size:contain; "></div>
             <div class="object_info_wrapper">
                 <div class="object_info">
                     <h3>Object Info</h3>
@@ -233,7 +236,7 @@ def create_index(ml):
                 index_cube = index_cube.replace(k, str(ml[i_gal][col]))
         
         # SIZE
-        h = fits.getheader(join('/storage/hdd/scubes_S20/', f'{gal_sname}_cube.fits'), 0)
+        h = fits.getheader(join(CUBESPATH, f'{gal_sname}_cube.fits'), 0)
         size = h.get('SIZE')
         gal_page = gal_page.replace('{SIZE}', str(size))
         index_cube = index_cube.replace('{SIZE}', str(size))
@@ -251,8 +254,7 @@ def create_index(ml):
         print(index_fin, file=f)
 
 if __name__ == '__main__':
-    masterlist = '/home/lacerda/dev/astro/splus/s-cubes/workdir/masterlist_Hydra-Fornax_v02.csv'
-    ml_table = ascii.read(masterlist)
+    ml_table = ascii.read(MASTERLIST)
     create_index(ml_table)
 
 
